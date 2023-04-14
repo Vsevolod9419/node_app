@@ -1,8 +1,27 @@
-import express from "express"
+const btn = document.querySelector("#btn");
+const name = document.querySelector(".name");
+const pas = document.querySelector(".pas");
 
-const app = express()
-const PORT = 5000
+async function buttonHandler(ev) {
+	ev.preventDefault()
+  const user = {
+    name: name.value,
+    password: pas.value,
+  };
 
-app.listen(PORT, () => {
-	console.log(`Server has been started on port ${PORT}`)
-})
+  try {
+    let res = await fetch("http://localhost:5000/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(user),
+    });
+    let data = await res.text();
+    alert('data');
+  } catch (er) {
+    alert(er.message);
+  }
+}
+
+btn.addEventListener("click", buttonHandler);
