@@ -66,4 +66,7 @@ app.use(cors())
 
 app.use(express.json())
 
-4.
+## Git
+
+1. Cоздание новой ветки
+git branch client
