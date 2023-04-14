@@ -16,12 +16,13 @@ async function buttonHandler(ev) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(user),
-    });
+    })
     let data = await res.text();
-    alert('data');
+    alert(data);
   } catch (er) {
     alert(er.message);
   }
 }
 
-btn.addEventListener("click", buttonHandler);
+btn.addEventListener("submit", buttonHandler);
+// document.forms[0].addEventListener("submit", (e) => e.preventDefault())
