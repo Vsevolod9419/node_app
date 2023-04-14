@@ -29,14 +29,41 @@ node app.js
 
 ## Halper (не обязательно)
 
-1 Устанавливаем nodemon
+1. Устанавливаем nodemon
 npm i nodemon
-2 Редактируем script в package.json
+2. Редактируем script в package.json
 
 "scripts": {
     "dev": "nodemon app.js"
   },
 
-3 Запускаем через нодемун
+3. Запускаем через нодемун
 
 	npm run dev
+  
+  ---------------
+  ## Server
+
+  1. Делаем обработчик запросов
+
+  app.post("/user",  (req, res ) => {
+	
+})
+
+2. Убираем ошибку CORS
+Устанавитт библиотеку  cors
+
+npm i cors
+
+подключаем её
+
+import cors from "cors"
+
+используем её
+app.use(cors())
+
+3. Делаем bodyparser
+
+app.use(express.json())
+
+4.
