@@ -70,3 +70,12 @@ app.use(express.json())
 
 1. Cоздание новой ветки
 git branch client
+
+2. посмотреть ветки 
+git branch
+
+3. перейти в другую ветку
+git checkout <name>
+
+4.привязать
+merge
